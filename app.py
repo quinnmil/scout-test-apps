@@ -25,6 +25,7 @@ settings.configure(
     SCOUT_MONITOR=True,
     SCOUT_KEY=os.environ['SCOUT_KEY'],
     SCOUT_NAME="Test App",
+    SCOUT_IGNORE=["/ignore"],
 )
 
 
@@ -37,6 +38,7 @@ def index(request):
 
 urlpatterns = [
     path("", index),
+    path("ignore", index),
 ]
 
 app = get_wsgi_application()
