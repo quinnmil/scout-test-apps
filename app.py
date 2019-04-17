@@ -36,9 +36,13 @@ def index(request):
     return HttpResponse(f"Hello, {html.escape(name)}!")
 
 
+def ignore(request):
+    return HttpResponse("Ignore me!")
+
+
 urlpatterns = [
     path("", index),
-    path("ignore", index),
+    path("ignore", ignore),
 ]
 
 app = get_wsgi_application()
