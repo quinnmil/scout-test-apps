@@ -1,4 +1,3 @@
-import html
 import logging
 import os
 import random
@@ -8,9 +7,8 @@ import time
 from django.conf import settings
 from django.core.wsgi import get_wsgi_application
 from django.http import HttpResponse
-from django.urls import path
 from django.utils.crypto import get_random_string
-
+from django.utils.html import escape
 
 logging.getLogger().setLevel(logging.DEBUG)
 
@@ -33,17 +31,26 @@ def index(request):
     name = request.GET.get("name", "World")
     if random.random() < 0.1:
         time.sleep(1)
-    return HttpResponse(f"Hello, {html.escape(name)}!")
+    return HttpResponse("Hello, " + escape(name) + "!")
 
 
 def ignore(request):
     return HttpResponse("Ignore me!")
 
 
-urlpatterns = [
-    path("", index),
-    path("ignore", ignore),
-]
+try:
+    from django.urls import path
+    urlpatterns = [
+        path("", index),
+        path("ignore", ignore),
+    ]
+except ImportError:
+    # Django < 2.0
+    from django.conf.urls import url
+    urlpatterns = [
+        url(r"^$", index),
+        url(r"^ignore/$", ignore),
+    ]
 
 app = get_wsgi_application()
 
