@@ -6,10 +6,11 @@
 #
 certifi==2019.3.9         # via requests
 chardet==3.0.4            # via requests
-django==2.1.7
+django==2.2
 idna==2.8                 # via requests
 psutil==5.6.1             # via scout-apm
-pytz==2018.9              # via django
+pytz==2019.1              # via django
 requests==2.21.0          # via scout-apm
-scout-apm==2.0.2
-urllib3==1.24.1           # via requests
+scout-apm==2.0.4
+sqlparse==0.3.0           # via django
+urllib3==1.24.2           # via requests
