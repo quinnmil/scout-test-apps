@@ -4,7 +4,7 @@
 #
 #    pip-compile
 #
--e file:///Users/chainz/Documents/Projects/scout_apm_python
+-e ../../scout_apm_python
 certifi==2019.6.16        # via requests
 chardet==3.0.4            # via requests
 falcon==2.0.0

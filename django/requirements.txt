@@ -4,13 +4,13 @@
 #
 #    pip-compile
 #
+-e ../../scout_apm_python
 certifi==2019.6.16        # via requests
 chardet==3.0.4            # via requests
-django==2.2.2
+django==2.2.3
 idna==2.8                 # via requests
-psutil==5.6.3             # via scout-apm
+psutil==5.6.3
 pytz==2019.1              # via django
-requests==2.22.0          # via scout-apm
-scout-apm==2.0.4
+requests==2.22.0
 sqlparse==0.3.0           # via django
 urllib3==1.25.3           # via requests
