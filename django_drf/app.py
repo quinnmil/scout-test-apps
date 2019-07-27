@@ -4,7 +4,6 @@ import sys
 
 from django.conf import settings
 from django.core.wsgi import get_wsgi_application
-from django.urls import path
 from django.utils.crypto import get_random_string
 
 logging.getLogger().setLevel(logging.DEBUG)
@@ -51,7 +50,9 @@ settings.configure(
         "DEFAULT_RENDERER_CLASSES": ["rest_framework.renderers.JSONRenderer"],
         # Remove dependency on django.contrib.auth by not using AnonymousUser
         # for unauthenticated users but instead a plain old object
-        "UNAUTHENTICATED_USER": "builtins.object",
+        "UNAUTHENTICATED_USER": (
+            "__builtin__.object" if sys.version_info[0] == 2 else "builtins.object"
+        ),
     },
     # Scout
     SCOUT_MONITOR=True,
@@ -84,7 +85,15 @@ class MyViewSet(ViewSet):
 router = SimpleRouter()
 router.register("my", MyViewSet, basename="my")
 
-urlpatterns = [path("", index)] + router.urls
+try:
+    from django.urls import path
+
+    urlpatterns = [path("", index)] + router.urls
+except ImportError:
+    # Django < 2.0
+    from django.conf.urls import url
+
+    urlpatterns = [url(r"^$", index)] + router.urls
 
 app = get_wsgi_application()
 
