@@ -1,3 +1,4 @@
 -e ../../scout_apm_python
 django
 djangorestframework
+psycopg2-binary

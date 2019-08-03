@@ -2,6 +2,7 @@ import logging
 import os
 import sys
 
+from django.db import connection
 from django.conf import settings
 from django.core.wsgi import get_wsgi_application
 from django.utils.crypto import get_random_string
@@ -10,6 +11,16 @@ logging.getLogger().setLevel(logging.DEBUG)
 
 settings.configure(
     ALLOWED_HOSTS=["*"],  # Disable allowed host checking
+    DATABASES={
+        "default": {
+            "ENGINE": "django.db.backends.postgresql",
+            "NAME": "db",
+            "USER": "user",
+            "PASSWORD": "password",
+            "HOST": "localhost",
+            "PORT": "5432",
+        }
+    },
     DEBUG=(os.environ.get("DEBUG", "") == "1"),
     INSTALLED_APPS=["scout_apm.django", "rest_framework"],
     LOGGING={
@@ -70,6 +81,8 @@ from rest_framework.viewsets import ViewSet  # noqa
 
 @api_view(["GET"])
 def index(request):
+    with connection.cursor() as cursor:
+        cursor.execute("SELECT 123")
     return Response({"message": "Hello, world!"})
 
 
@@ -79,6 +92,8 @@ class MyViewSet(ViewSet):
     """
 
     def list(self, request):
+        with connection.cursor() as cursor:
+            cursor.execute("SELECT 123")
         return Response({"my": "viewset"})
 
 
