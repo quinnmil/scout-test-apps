@@ -2,13 +2,12 @@ import logging
 import os
 
 import uvicorn
-from starlette.applications import Starlette
-from starlette.endpoints import HTTPEndpoint
-from starlette.responses import PlainTextResponse
-
 from scout_apm.api import Config
 from scout_apm.async_.starlette import ScoutMiddleware
-
+from starlette.applications import Starlette
+from starlette.background import BackgroundTasks
+from starlette.endpoints import HTTPEndpoint
+from starlette.responses import PlainTextResponse
 
 logging.config.dictConfig({
     "version": 1,
@@ -42,6 +41,21 @@ class HelloEndpoint(HTTPEndpoint):
 @app.route("/crash/")
 async def crash(request):
     raise ValueError("BØØM!")  # non-ASCII
+
+
+@app.route("/background-jobs/")
+async def background_jobs(request):
+    def sync_task():
+        print("Doing the sync task ! ✨")
+
+    async def async_task():
+        print("Doing the async task ! 🎉")
+
+    tasks = BackgroundTasks()
+    tasks.add_task(sync_task)
+    tasks.add_task(async_task)
+
+    return PlainTextResponse("Triggering background jobs", background=tasks)
 
 
 @app.exception_handler(500)
