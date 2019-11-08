@@ -1,10 +1,13 @@
+import asyncio
 import logging
 import os
 import random
 import sys
 import time
 
-from channels.routing import ProtocolTypeRouter
+from channels.http import AsgiHandler
+from channels.generic.http import AsyncHttpConsumer
+from channels.routing import URLRouter
 from django.conf import settings
 from django.http import HttpResponse
 from django.utils.crypto import get_random_string
@@ -55,7 +58,18 @@ except ImportError:
 
     urlpatterns = [url(r"^$", index)]
 
-application = ProtocolTypeRouter({})
+
+class BasicHttpConsumer(AsyncHttpConsumer):
+    async def handle(self, body):
+        await asyncio.sleep(1)
+        await self.send_response(
+            200,
+            b"Hello world, asynchronously!",
+            headers=[(b"Content-Type", b"text/plain")],
+        )
+
+
+application = URLRouter([url(r"^async/$", BasicHttpConsumer), url(r"", AsgiHandler)])
 
 if __name__ == "__main__":
     from django.core.management import execute_from_command_line
