@@ -1,9 +1,5 @@
-import os
-import time
-
 from redis import Redis
 from rq import Queue
-from scout_apm.api import Config
 
 
 def hello():
