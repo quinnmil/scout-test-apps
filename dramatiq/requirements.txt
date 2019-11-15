@@ -4,31 +4,33 @@
 #
 #    pip-compile
 #
--e ../../scout_apm_python
 appnope==0.1.0            # via ipython
+asgiref==3.2.3            # via scout-apm
 backcall==0.1.0           # via ipython
-certifi==2019.6.16        # via requests
+certifi==2019.9.11        # via requests
 chardet==3.0.4            # via requests
-decorator==4.4.0          # via ipython, traitlets
-dramatiq[redis]==1.6.1
+decorator==4.4.1          # via ipython, traitlets
+dramatiq[redis]==1.7.0
 idna==2.8                 # via requests
 ipython-genutils==0.2.0   # via traitlets
-ipython==7.7.0
-jedi==0.14.1              # via ipython
+ipython==7.9.0
+jedi==0.15.1              # via ipython
 parso==0.5.1              # via jedi
 pexpect==4.7.0            # via ipython
 pickleshare==0.7.5        # via ipython
 prometheus-client==0.7.1  # via dramatiq
-prompt-toolkit==2.0.9     # via ipython
-psutil==5.6.3
+prompt-toolkit==2.0.10    # via ipython
+psutil==5.6.5             # via scout-apm
 ptyprocess==0.6.0         # via pexpect
 pygments==2.4.2           # via ipython
-redis==3.3.6              # via dramatiq
-requests==2.22.0
-six==1.12.0               # via prompt-toolkit, traitlets
-traitlets==4.3.2          # via ipython
-urllib3==1.25.3           # via requests
+redis==3.3.11             # via dramatiq
+requests==2.22.0          # via scout-apm
+scout-apm==2.8.0
+six==1.13.0               # via prompt-toolkit, traitlets
+traitlets==4.3.3          # via ipython
+urllib3==1.25.7           # via requests
 wcwidth==0.1.7            # via prompt-toolkit
+wrapt==1.11.2             # via scout-apm
 
 # The following packages are considered to be unsafe in a requirements file:
-# setuptools==41.0.1        # via ipython
+# setuptools==41.6.0        # via ipython

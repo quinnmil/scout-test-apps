@@ -4,33 +4,34 @@
 #
 #    pip-compile
 #
--e file:///Users/chainz/Documents/Projects/scout_apm_python
-asgiref==3.2.3            # via channels, daphne
+asgiref==3.2.3            # via channels, daphne, scout-apm
 attrs==19.3.0             # via automat, twisted
 autobahn==19.11.1         # via daphne
 automat==0.8.0            # via twisted
-certifi==2019.6.16        # via requests
+certifi==2019.9.11        # via requests
 cffi==1.13.2              # via cryptography
 channels==2.3.1
 chardet==3.0.4            # via requests
 constantly==15.1.0        # via twisted
 cryptography==2.8         # via autobahn
 daphne==2.3.0             # via channels
-django==1.11.23
+django==2.2.7
 hyperlink==19.0.0         # via twisted
 idna==2.8                 # via hyperlink, requests
 incremental==17.5.0       # via twisted
-psutil==5.6.3
+psutil==5.6.5             # via scout-apm
 pycparser==2.19           # via cffi
 pyhamcrest==1.9.0         # via twisted
-pytz==2019.2              # via django
-requests==2.22.0
+pytz==2019.3              # via django
+requests==2.22.0          # via scout-apm
+scout-apm==2.8.0
 six==1.13.0               # via autobahn, automat, cryptography, pyhamcrest, txaio
-twisted==19.7.0           # via daphne
+sqlparse==0.3.0           # via django
+twisted==19.10.0          # via daphne
 txaio==18.8.1             # via autobahn
-urllib3==1.25.3           # via requests
-wrapt==1.11.2
-zope.interface==4.6.0     # via twisted
+urllib3==1.25.7           # via requests
+wrapt==1.11.2             # via scout-apm
+zope.interface==4.7.1     # via twisted
 
 # The following packages are considered to be unsafe in a requirements file:
 # setuptools==41.6.0        # via pyhamcrest, zope.interface

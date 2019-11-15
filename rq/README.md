@@ -1,18 +1,18 @@
 RQ
 ==
 
-For testing the RQ integration in its simplest context.
+For testing the [RQ](https://python-rq.org/) integration.
 
 Setup
 -----
 
-Run redis with:
+**First,** run Redis with:
 
 ```
 $ docker run --detach --name redis --publish 6379:6379 redis:5.0.4-alpine
 ```
 
-Set up the local environment:
+**Second,** set up the local environment:
 
 ```
 $ python -m venv venv
@@ -20,7 +20,14 @@ $ source venv/bin/activate
 $ pip install -r requirements.txt
 ```
 
-Run the worker with:
+*If* you want to test with a local, in-development version of `scout-apm`,
+install that with:
+
+```
+$ pip install -e /path/to/scout_apm_python  # optional!
+```
+
+**Third,** run the worker with:
 
 ```
 $ export SCOUT_KEY=your-key-here
@@ -29,14 +36,15 @@ $ rq worker --config app_config --worker-class scout_apm.rq.Worker
 
 You should see startup logging from both RQ and Scout.
 
-Start another terminal, activate the virtual environment, and open IPython:
+**Fourth,** start another terminal, activate the virtual environment, and open
+IPython:
 
 ```
 $ source venv/bin/activate
 $ ipython
 ```
 
-Then add import and enqueue tasks as you wish to test:
+Here you can import and enqueue tasks as you wish to test:
 
 ```
 In [1]: import app
