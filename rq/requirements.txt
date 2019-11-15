@@ -4,7 +4,7 @@
 #
 #    pip-compile
 #
--e file:///Users/chainz/Documents/Projects/scout_apm_python
+-e ../../scout_apm_python
 appnope==0.1.0            # via ipython
 asgiref==3.2.3
 backcall==0.1.0           # via ipython
