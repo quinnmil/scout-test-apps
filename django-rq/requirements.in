@@ -1,0 +1,5 @@
+-e ../../scout_apm_python
+django>=2.2,<3
+django-rq
+ipython
+rq
