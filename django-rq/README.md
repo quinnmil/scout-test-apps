@@ -50,7 +50,7 @@ Here you can import and enqueue tasks as you wish to test:
 ```
 In [1]: import app, django_rq
 
-In [2]: app.queue.enqueue(app.hello)
+In [2]: django_rq.enqueue(app.hello)
 Out[2]: Job('ce4e7a6b-09a2-4bc0-87ce-ea46956e9d78', enqueued_at=datetime.datetime(2019, 11, 15, 17, 3, 14, 126720))
 ```
 
