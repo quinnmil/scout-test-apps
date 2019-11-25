@@ -48,17 +48,6 @@ def index(request):
     return HttpResponse("Hello, " + escape(name) + "!")
 
 
-try:
-    from django.urls import path
-
-    urlpatterns = [path("", index)]
-except ImportError:
-    # Django < 2.0
-    from django.conf.urls import url
-
-    urlpatterns = [url(r"^$", index)]
-
-
 class BasicHttpConsumer(AsyncHttpConsumer):
     async def handle(self, body):
         await asyncio.sleep(1)
@@ -69,7 +58,20 @@ class BasicHttpConsumer(AsyncHttpConsumer):
         )
 
 
-application = URLRouter([url(r"^async/$", BasicHttpConsumer), url(r"", AsgiHandler)])
+try:
+    from django.urls import path
+
+    urlpatterns = [path("", index)]
+    application = URLRouter([path(r"async", BasicHttpConsumer), path("", AsgiHandler)])
+except ImportError:
+    # Django < 2.0
+    from django.conf.urls import url
+
+    urlpatterns = [url(r"^$", index)]
+    application = URLRouter(
+        [url(r"^async/$", BasicHttpConsumer), url(r"", AsgiHandler)]
+    )
+
 
 if __name__ == "__main__":
     from django.core.management import execute_from_command_line
