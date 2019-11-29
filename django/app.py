@@ -34,7 +34,7 @@ settings.configure(
     INSTALLED_APPS=["scout_apm.django"],
     SCOUT_MONITOR=True,
     SCOUT_KEY=os.environ["SCOUT_KEY"],
-    SCOUT_NAME="Test App",
+    SCOUT_NAME="Test Django App",
     SCOUT_IGNORE=["/ignore"],
 )
 
