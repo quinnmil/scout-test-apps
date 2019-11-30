@@ -24,7 +24,7 @@ pycparser==2.19           # via cffi
 pyhamcrest==1.9.0         # via twisted
 pytz==2019.3              # via django
 requests==2.22.0          # via scout-apm
-scout-apm==2.8.0
+scout-apm==2.9.0
 six==1.13.0               # via asgiref, autobahn, automat, cryptography, pyhamcrest, txaio
 twisted==19.10.0          # via daphne
 txaio==18.8.1             # via autobahn
@@ -33,4 +33,4 @@ wrapt==1.11.2             # via scout-apm
 zope.interface==4.7.1     # via twisted
 
 # The following packages are considered to be unsafe in a requirements file:
-# setuptools==41.6.0        # via pyhamcrest, zope.interface
+# setuptools==42.0.1        # via pyhamcrest, zope.interface

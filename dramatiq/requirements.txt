@@ -25,7 +25,7 @@ ptyprocess==0.6.0         # via pexpect
 pygments==2.4.2           # via ipython
 redis==3.3.11             # via dramatiq
 requests==2.22.0          # via scout-apm
-scout-apm==2.8.0
+scout-apm==2.9.0
 six==1.13.0               # via prompt-toolkit, traitlets
 traitlets==4.3.3          # via ipython
 urllib3==1.25.7           # via requests
@@ -33,4 +33,4 @@ wcwidth==0.1.7            # via prompt-toolkit
 wrapt==1.11.2             # via scout-apm
 
 # The following packages are considered to be unsafe in a requirements file:
-# setuptools==41.6.0        # via ipython
+# setuptools==42.0.1        # via ipython

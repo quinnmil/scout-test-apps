@@ -28,7 +28,7 @@ pytz==2019.3              # via django
 redis==3.3.11             # via django-rq, rq
 requests==2.22.0          # via scout-apm
 rq==1.1.0
-scout-apm==2.8.0
+scout-apm==2.9.0
 six==1.13.0               # via prompt-toolkit, traitlets
 sqlparse==0.3.0           # via django
 traitlets==4.3.3          # via ipython
@@ -37,4 +37,4 @@ wcwidth==0.1.7            # via prompt-toolkit
 wrapt==1.11.2             # via scout-apm
 
 # The following packages are considered to be unsafe in a requirements file:
-# setuptools==41.6.0        # via ipython
+# setuptools==42.0.1        # via ipython

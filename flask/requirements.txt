@@ -15,7 +15,7 @@ jinja2==2.10.3            # via flask
 markupsafe==1.1.1         # via jinja2
 psutil==5.6.5             # via scout-apm
 requests==2.22.0          # via scout-apm
-scout-apm==2.8.0
+scout-apm==2.9.0
 urllib3==1.25.7           # via requests
 werkzeug==0.16.0          # via flask
 wrapt==1.11.2             # via scout-apm

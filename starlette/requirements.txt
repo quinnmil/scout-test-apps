@@ -13,7 +13,7 @@ httptools==0.0.13         # via uvicorn
 idna==2.8                 # via requests
 psutil==5.6.5             # via scout-apm
 requests==2.22.0          # via scout-apm
-scout-apm==2.8.0
+scout-apm==2.9.0
 starlette==0.13.0
 urllib3==1.25.7           # via requests
 uvicorn==0.10.8

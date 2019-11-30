@@ -12,9 +12,9 @@ gunicorn==20.0.0
 idna==2.8                 # via requests
 psutil==5.6.5             # via scout-apm
 requests==2.22.0          # via scout-apm
-scout-apm==2.8.0
+scout-apm==2.9.0
 urllib3==1.25.7           # via requests
 wrapt==1.11.2             # via scout-apm
 
 # The following packages are considered to be unsafe in a requirements file:
-# setuptools==41.6.0        # via gunicorn
+# setuptools==42.0.1        # via gunicorn
