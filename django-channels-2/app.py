@@ -1,5 +1,4 @@
 import asyncio
-import logging
 import os
 import random
 import sys
@@ -13,8 +12,6 @@ from django.http import HttpResponse
 from django.utils.crypto import get_random_string
 from django.utils.html import escape
 
-logging.getLogger().setLevel(logging.DEBUG)
-
 settings.configure(
     ASGI_APPLICATION="__main__.application",
     DEBUG=(os.environ.get("DEBUG", "") == "1"),
@@ -26,7 +23,7 @@ settings.configure(
         "disable_existing_loggers": False,
         "formatters": {
             "stdout": {
-                "format": "%(asctime)s %(levelname)s %(message)s",
+                "format": "%(asctime)s %(levelname)s\t%(name)s %(message)s",
                 "datefmt": "%Y-%m-%dT%H:%M:%S%z",
             }
         },
@@ -37,7 +34,7 @@ settings.configure(
     },
     INSTALLED_APPS=["channels", "scout_apm.django"],
     SCOUT_MONITOR=True,
-    SCOUT_NAME="Test Django Channels App",
+    SCOUT_NAME="Test Django Channels 2 App",
 )
 
 
@@ -62,7 +59,7 @@ try:
     from django.urls import path
 
     urlpatterns = [path("", index)]
-    application = URLRouter([path(r"async", BasicHttpConsumer), path("", AsgiHandler)])
+    application = URLRouter([path("async/", BasicHttpConsumer), path("", AsgiHandler)])
 except ImportError:
     # Django < 2.0
     from django.conf.urls import url
