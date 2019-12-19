@@ -4,7 +4,7 @@
 #
 #    pip-compile
 #
-asgiref==3.2.3            # via channels, daphne, scout-apm
+asgiref==3.2.3            # via channels, daphne, django, scout-apm
 attrs==19.3.0             # via automat, twisted
 autobahn==19.11.1         # via daphne
 automat==0.8.0            # via twisted
@@ -15,7 +15,7 @@ chardet==3.0.4            # via requests
 constantly==15.1.0        # via twisted
 cryptography==2.8         # via autobahn
 daphne==2.3.0             # via channels
-django==2.2.7
+django==3.0.1
 hyperlink==19.0.0         # via twisted
 idna==2.8                 # via hyperlink, requests
 incremental==17.5.0       # via twisted
@@ -34,4 +34,4 @@ wrapt==1.11.2             # via scout-apm
 zope.interface==4.7.1     # via twisted
 
 # The following packages are considered to be unsafe in a requirements file:
-# setuptools==42.0.1        # via pyhamcrest, zope.interface
+# setuptools

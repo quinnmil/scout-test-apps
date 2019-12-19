@@ -10,7 +10,7 @@ backcall==0.1.0           # via ipython
 certifi==2019.9.11        # via requests
 chardet==3.0.4            # via requests
 decorator==4.4.1          # via ipython, traitlets
-django==2.2.7
+django==2.2.9
 huey==2.1.3
 idna==2.8                 # via requests
 ipython-genutils==0.2.0   # via traitlets
@@ -34,4 +34,4 @@ wcwidth==0.1.7            # via prompt-toolkit
 wrapt==1.11.2             # via scout-apm
 
 # The following packages are considered to be unsafe in a requirements file:
-# setuptools==42.0.1        # via ipython
+# setuptools

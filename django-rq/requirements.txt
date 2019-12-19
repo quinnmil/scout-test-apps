@@ -12,7 +12,7 @@ chardet==3.0.4            # via requests
 click==7.0                # via rq
 decorator==4.4.1          # via ipython, traitlets
 django-rq==2.1.0
-django==2.2.7
+django==2.2.9
 idna==2.8                 # via requests
 ipython-genutils==0.2.0   # via traitlets
 ipython==7.9.0
@@ -37,4 +37,4 @@ wcwidth==0.1.7            # via prompt-toolkit
 wrapt==1.11.2             # via scout-apm
 
 # The following packages are considered to be unsafe in a requirements file:
-# setuptools==42.0.1        # via ipython
+# setuptools

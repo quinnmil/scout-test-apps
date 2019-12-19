@@ -4,10 +4,10 @@
 #
 #    pip-compile
 #
-asgiref==3.2.3            # via scout-apm
+asgiref==3.2.3            # via django, scout-apm
 certifi==2019.9.11        # via requests
 chardet==3.0.4            # via requests
-django==2.2.7
+django==3.0.1
 idna==2.8                 # via requests
 psutil==5.6.5             # via scout-apm
 pytz==2019.3              # via django
