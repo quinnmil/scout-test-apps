@@ -1,16 +1,14 @@
 import asyncio
 import os
-import random
 import sys
-import time
 
 from channels.http import AsgiHandler
 from channels.generic.http import AsyncHttpConsumer
+from channels.generic.websocket import AsyncWebsocketConsumer
 from channels.routing import URLRouter
 from django.conf import settings
 from django.http import HttpResponse
 from django.utils.crypto import get_random_string
-from django.utils.html import escape
 
 settings.configure(
     ASGI_APPLICATION="__main__.application",
@@ -39,34 +37,159 @@ settings.configure(
 
 
 def index(request):
-    name = request.GET.get("name", "World")
-    if random.random() < 0.1:
-        time.sleep(1)
-    return HttpResponse("Hello, " + escape(name) + "!")
+    return HttpResponse(
+        """
+        <!DOCTYPE html>
+        <html>
+        <head>
+            <meta charset="UTF-8">
+            <title>Django Channels 2 Test App</title>
+        </head>
+        <body>
+            <p><a href="/sse/">Server Sent Events Test Page</a></p>
+            <p><a href="/ws/">Websockets Test Page</a></p>
+        </body>
+        """
+    )
 
 
-class BasicHttpConsumer(AsyncHttpConsumer):
+class ServerSentEventsPage(AsyncHttpConsumer):
+    """
+    Implemented as a pretty basic Channels AsyncHTTPConsumer to test that.
+    """
     async def handle(self, body):
-        await asyncio.sleep(1)
-        await self.send_response(
-            200,
-            b"Hello world, asynchronously!",
-            headers=[(b"Content-Type", b"text/plain")],
+        await self.send_headers(
+            headers=[(b"Content-Type", b"text/html")]
         )
+        await self.send_body(
+            b"""
+            <!DOCTYPE html>
+            <html>
+            <head>
+                <title>Server Sent Events Page</title>
+                <meta charset="UTF-8">
+            </head>
+            <body>
+                <script>
+                    const eventSource = new EventSource("/sse-source/");
+                    eventSource.onmessage = function(event) {
+                        const newElement = document.createElement("p");
+                        newElement.innerHTML = event.data;
+                        document.getElementsByTagName("body")[0].appendChild(newElement);
+                    }
+                </script>
+            </body>
+            </html>
+            """
+        )
+
+
+class ServerSentEventsSource(AsyncHttpConsumer):
+    """
+    Implemented as a more complicated AsyncHttpConsumer to test that our traces
+    can capture long pauses.
+    """
+    async def handle(self, body):
+        await self.send_headers(
+            headers=[
+                (b"Cache-Control", b"no-cache"),
+                (b"Content-Type", b"text/event-stream"),
+                (b"Transfer-Encoding", b"chunked"),
+            ]
+        )
+        messages = [
+            "Hello!",
+            "This page...",
+            "...will load...",
+            "...one chunk...",
+            "...at a time.",
+            "This is...",
+            "...because it's using...",
+            "...server sent events.",
+        ]
+        for message in messages:
+            await asyncio.sleep(1.0)
+            await self.send_body(f"data: {message}\n\n".encode("utf-8"), more_body=True)
+        await self.send_body(b"")
+
+
+class WebsocketsPage(AsyncHttpConsumer):
+    async def handle(self, body):
+        await self.send_headers(
+            headers=[(b"Content-Type", b"text/html")]
+        )
+        await self.send_body(
+            b"""
+            <!DOCTYPE html>
+            <html>
+            <head>
+                <title>Websockets Page</title>
+                <meta charset="UTF-8">
+            </head>
+            <body>
+                <script>
+                    const chatSocket = new WebSocket('ws://' + window.location.host + '/ws-source/');
+
+                    chatSocket.onmessage = function(event) {
+                        const newElement = document.createElement("p");
+                        newElement.innerHTML = event.data;
+                        document.getElementsByTagName("body")[0].appendChild(newElement);
+                    };
+
+                    chatSocket.onclose = function() {
+                        const newElement = document.createElement("p");
+                        newElement.textContent = "Connection closed";
+                        document.getElementsByTagName("body")[0].appendChild(newElement);
+                    };
+                </script>
+            </body>
+            </html>
+            """
+        )
+
+
+class WebsocketsSource(AsyncWebsocketConsumer):
+    async def connect(self):
+        await self.accept()
+
+        messages = [
+            "Hello there!",
+            "This page...",
+            "...will load...",
+            "...one chunk...",
+            "...at a time.",
+            "This is...",
+            "...because it's using...",
+            "...websockets.",
+        ]
+        for message in messages:
+            await asyncio.sleep(1.0)
+            await self.send(text_data=message)
+
+    async def disconnect(self, close_code):
+        print("Client went away :(")
 
 
 try:
     from django.urls import path
 
     urlpatterns = [path("", index)]
-    application = URLRouter([path("async/", BasicHttpConsumer), path("", AsgiHandler)])
+    application = URLRouter(
+        [
+            path("sse/", ServerSentEventsPage),
+            path("sse-source/", ServerSentEventsSource),
+            path("ws/", WebsocketsPage),
+            path("ws-source/", WebsocketsSource),
+            path("", AsgiHandler),
+        ]
+    )
 except ImportError:
     # Django < 2.0
     from django.conf.urls import url
 
     urlpatterns = [url(r"^$", index)]
     application = URLRouter(
-        [url(r"^async/$", BasicHttpConsumer), url(r"", AsgiHandler)]
+        [url(r"^async/$", AsyncHttpConsumer), url(r"", AsgiHandler)]
     )
 
 

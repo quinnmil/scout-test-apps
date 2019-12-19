@@ -10,7 +10,7 @@ autobahn==19.11.1         # via daphne
 automat==0.8.0            # via twisted
 certifi==2019.9.11        # via requests
 cffi==1.13.2              # via cryptography
-channels==2.3.1
+channels==2.4.0
 chardet==3.0.4            # via requests
 constantly==15.1.0        # via twisted
 cryptography==2.8         # via autobahn

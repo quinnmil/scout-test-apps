@@ -32,7 +32,5 @@ $ python app.py runserver
 You should see startup logging from Daphne (Channels' async dev server),
 Django, and Scout.
 
-**Third,** visit pages in your browser:
-
-* http://localhost:8000/ for a normal Django sync view.
-* http://localhost:8000/async/ for a Channels based async view.
+**Third,** visit pages in your browser, starting with the index page
+http://localhost:8000/ which links to others.
