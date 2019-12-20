@@ -9,6 +9,7 @@ from channels.routing import URLRouter
 from django.conf import settings
 from django.http import HttpResponse
 from django.utils.crypto import get_random_string
+from scout_apm.async_.channels import ScoutMiddleware
 
 settings.configure(
     ASGI_APPLICATION="__main__.application",
@@ -174,7 +175,7 @@ try:
     from django.urls import path
 
     urlpatterns = [path("", index)]
-    application = URLRouter(
+    application = ScoutMiddleware(URLRouter(
         [
             path("sse/", ServerSentEventsPage),
             path("sse-source/", ServerSentEventsSource),
@@ -182,15 +183,15 @@ try:
             path("ws-source/", WebsocketsSource),
             path("", AsgiHandler),
         ]
-    )
+    ))
 except ImportError:
     # Django < 2.0
     from django.conf.urls import url
 
     urlpatterns = [url(r"^$", index)]
-    application = URLRouter(
+    application = ScoutMiddleware(URLRouter(
         [url(r"^async/$", AsyncHttpConsumer), url(r"", AsgiHandler)]
-    )
+    ))
 
 
 if __name__ == "__main__":
