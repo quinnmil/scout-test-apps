@@ -5,16 +5,16 @@
 #    pip-compile
 #
 asgiref==3.2.3            # via scout-apm
-certifi==2019.9.11        # via requests
+certifi==2019.11.28       # via requests
 chardet==3.0.4            # via requests
 falcon==2.0.0
-gunicorn==20.0.0
+gunicorn==20.0.4
 idna==2.8                 # via requests
-psutil==5.6.5             # via scout-apm
+psutil==5.6.7             # via scout-apm
 requests==2.22.0          # via scout-apm
-scout-apm==2.9.0
+scout-apm==2.9.1
 urllib3==1.25.7           # via requests
 wrapt==1.11.2             # via scout-apm
 
 # The following packages are considered to be unsafe in a requirements file:
-# setuptools==42.0.1        # via gunicorn
+# setuptools

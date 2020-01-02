@@ -7,30 +7,30 @@
 appnope==0.1.0            # via ipython
 asgiref==3.2.3            # via scout-apm
 backcall==0.1.0           # via ipython
-certifi==2019.9.11        # via requests
+certifi==2019.11.28       # via requests
 chardet==3.0.4            # via requests
 click==7.0                # via rq
 decorator==4.4.1          # via ipython, traitlets
 idna==2.8                 # via requests
 ipython-genutils==0.2.0   # via traitlets
-ipython==7.9.0
-jedi==0.15.1              # via ipython
-parso==0.5.1              # via jedi
+ipython==7.11.1
+jedi==0.15.2              # via ipython
+parso==0.5.2              # via jedi
 pexpect==4.7.0            # via ipython
 pickleshare==0.7.5        # via ipython
-prompt-toolkit==2.0.10    # via ipython
-psutil==5.6.5             # via scout-apm
+prompt-toolkit==3.0.2     # via ipython
+psutil==5.6.7             # via scout-apm
 ptyprocess==0.6.0         # via pexpect
-pygments==2.4.2           # via ipython
+pygments==2.5.2           # via ipython
 redis==3.3.11             # via rq
 requests==2.22.0          # via scout-apm
 rq==1.1.0
-scout-apm==2.9.0
-six==1.13.0               # via prompt-toolkit, traitlets
+scout-apm==2.9.1
+six==1.13.0               # via traitlets
 traitlets==4.3.3          # via ipython
 urllib3==1.25.7           # via requests
-wcwidth==0.1.7            # via prompt-toolkit
+wcwidth==0.1.8            # via prompt-toolkit
 wrapt==1.11.2             # via scout-apm
 
 # The following packages are considered to be unsafe in a requirements file:
-# setuptools==42.0.1        # via ipython
+# setuptools
