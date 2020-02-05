@@ -1,8 +1,9 @@
+import asyncio
 import logging
 import os
 
 import uvicorn
-from scout_apm.api import Config
+from scout_apm.api import Config, instrument
 from scout_apm.async_.starlette import ScoutMiddleware
 from starlette.applications import Starlette
 from starlette.background import BackgroundTasks
@@ -27,6 +28,8 @@ logging.config.dictConfig({
 
 
 async def home(request):
+    with instrument("sleep"):
+        await asyncio.sleep(1)
     return PlainTextResponse("Welcome home.")
 
 
