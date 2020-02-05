@@ -8,6 +8,7 @@ from starlette.applications import Starlette
 from starlette.background import BackgroundTasks
 from starlette.endpoints import HTTPEndpoint
 from starlette.responses import PlainTextResponse
+from starlette.routing import Route
 
 logging.config.dictConfig({
     "version": 1,
@@ -24,26 +25,20 @@ logging.config.dictConfig({
     "root": {"handlers": ["stdout"], "level": "DEBUG"},
 })
 
-app = Starlette()
 
-
-@app.route("/")
 async def home(request):
     return PlainTextResponse("Welcome home.")
 
 
-@app.route("/hello/")
 class HelloEndpoint(HTTPEndpoint):
     async def get(self, request):
         return PlainTextResponse("Hello World!")
 
 
-@app.route("/crash/")
 async def crash(request):
     raise ValueError("BØØM!")  # non-ASCII
 
 
-@app.route("/background-jobs/")
 async def background_jobs(request):
     def sync_task():
         print("Doing the sync task ! ✨")
@@ -58,10 +53,23 @@ async def background_jobs(request):
     return PlainTextResponse("Triggering background jobs", background=tasks)
 
 
-@app.exception_handler(500)
 async def error(request, exc):
-    # Always raise exceptions
+    # Always raise exceptions, rather than convert them into pages
     raise exc
+
+
+app = Starlette(
+    routes=[
+        Route("/", home),
+        Route("/hello/", HelloEndpoint),
+        Route("/crash/", crash),
+        Route("/background-jobs/", background_jobs),
+    ],
+    exception_handlers={
+        500: error,
+    }
+)
+
 
 # Installation instructions
 Config.set(
