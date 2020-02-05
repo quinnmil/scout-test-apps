@@ -27,10 +27,20 @@ logging.config.dictConfig({
 })
 
 
+async def get_welcome():
+    with instrument("get_welcome"):
+        await asyncio.sleep(0.1)
+        return "Welcome"
+
+
+async def get_home():
+    with instrument("get_home"):
+        await asyncio.sleep(0.2)
+        return "home"
+
+
 async def home(request):
-    with instrument("sleep"):
-        await asyncio.sleep(1)
-    return PlainTextResponse("Welcome home.")
+    return PlainTextResponse(f"{await get_welcome()} {await get_home()}.")
 
 
 class HelloEndpoint(HTTPEndpoint):
