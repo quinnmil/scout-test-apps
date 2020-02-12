@@ -15,7 +15,7 @@ chardet==3.0.4            # via requests
 constantly==15.1.0        # via twisted
 cryptography==2.8         # via autobahn, pyopenssl, service-identity
 daphne==2.4.1             # via channels
-django==3.0.2
+django==3.0.3
 hyperlink==19.0.0         # via twisted
 idna==2.8                 # via hyperlink, requests, twisted
 incremental==17.5.0       # via twisted

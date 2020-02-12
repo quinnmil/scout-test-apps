@@ -10,7 +10,7 @@ backcall==0.1.0           # via ipython
 certifi==2019.11.28       # via requests
 chardet==3.0.4            # via requests
 decorator==4.4.1          # via ipython, traitlets
-django==2.2.9
+django==2.2.10
 huey==2.1.3
 idna==2.8                 # via requests
 ipython-genutils==0.2.0   # via traitlets
