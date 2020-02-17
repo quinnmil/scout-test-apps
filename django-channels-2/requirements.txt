@@ -8,32 +8,30 @@ asgiref==3.2.3            # via channels, daphne, django, scout-apm
 attrs==19.3.0             # via automat, service-identity, twisted
 autobahn==20.1.2          # via daphne
 automat==0.8.0            # via twisted
-certifi==2019.11.28       # via requests
+certifi==2019.11.28       # via urllib3
 cffi==1.13.2              # via cryptography
 channels==2.4.0
-chardet==3.0.4            # via requests
 constantly==15.1.0        # via twisted
-cryptography==2.8         # via autobahn, pyopenssl, service-identity
+cryptography==2.8         # via autobahn, pyopenssl, service-identity, urllib3
 daphne==2.4.1             # via channels
 django==3.0.3
 hyperlink==19.0.0         # via twisted
-idna==2.8                 # via hyperlink, requests, twisted
+idna==2.8                 # via hyperlink, twisted, urllib3
 incremental==17.5.0       # via twisted
 psutil==5.6.7             # via scout-apm
 pyasn1-modules==0.2.8     # via service-identity
 pyasn1==0.4.8             # via pyasn1-modules, service-identity
 pycparser==2.19           # via cffi
 pyhamcrest==2.0.0         # via twisted
-pyopenssl==19.1.0         # via twisted
+pyopenssl==19.1.0         # via twisted, urllib3
 pytz==2019.3              # via django
-requests==2.22.0          # via scout-apm
-scout-apm==2.10.0
+scout-apm==2.11.0
 service-identity==18.1.0  # via twisted
 six==1.14.0               # via autobahn, automat, cryptography, pyopenssl, txaio
 sqlparse==0.3.0           # via django
 twisted[tls]==19.10.0     # via daphne
 txaio==18.8.1             # via autobahn
-urllib3==1.25.7           # via requests
+urllib3[secure]==1.25.7   # via scout-apm
 wrapt==1.11.2             # via scout-apm
 zope.interface==4.7.1     # via twisted
 
