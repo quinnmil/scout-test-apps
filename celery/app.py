@@ -1,11 +1,11 @@
 import logging.config
 import os
 import time
+from types import SimpleNamespace
 
 import celery
 from celery.signals import setup_logging
 import scout_apm.celery
-from scout_apm.api import Config
 
 
 @setup_logging.connect
@@ -30,15 +30,20 @@ def basic_logging_setup(**kwargs):
 
 app = celery.Celery("app", broker="redis://localhost:6379/0")
 
+# Imitate Django settings
+app.config_from_object(
+    SimpleNamespace(
+        SCOUT_MONITOR=True,
+        SCOUT_KEY=os.environ["SCOUT_KEY"],
+        SCOUT_NAME="Test Celery App",
+    ),
+    namespace="CELERY_",
+)
+
 
 @app.task
 def sleep(n):
     time.sleep(n)
 
 
-Config.set(
-    monitor=True,
-    key=os.environ["SCOUT_KEY"],
-    name="Test Celery App",
-)
-scout_apm.celery.install()
+scout_apm.celery.install(app)

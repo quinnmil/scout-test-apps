@@ -8,35 +8,35 @@ amqp==2.5.2               # via kombu
 appnope==0.1.0            # via ipython
 asgiref==3.2.3            # via scout-apm
 backcall==0.1.0           # via ipython
-billiard==3.6.2.0         # via celery
-celery[redis]==4.4.0
+billiard==3.6.3.0         # via celery
+celery[redis]==4.4.1      # via -r requirements.in
 certifi==2019.11.28       # via urllib3
 cffi==1.14.0              # via cryptography
 cryptography==2.8         # via pyopenssl, urllib3
-decorator==4.4.1          # via ipython, traitlets
-idna==2.8                 # via urllib3
+decorator==4.4.2          # via ipython, traitlets
+idna==2.9                 # via urllib3
 ipython-genutils==0.2.0   # via traitlets
-ipython==7.12.0
+ipython==7.13.0           # via -r requirements.in
 jedi==0.16.0              # via ipython
-kombu==4.6.7              # via celery
-parso==0.6.1              # via jedi
+kombu==4.6.8              # via celery
+parso==0.6.2              # via jedi
 pexpect==4.8.0            # via ipython
 pickleshare==0.7.5        # via ipython
 prompt-toolkit==3.0.3     # via ipython
-psutil==5.6.7             # via scout-apm
+psutil==5.7.0             # via scout-apm
 ptyprocess==0.6.0         # via pexpect
 pycparser==2.19           # via cffi
 pygments==2.5.2           # via ipython
 pyopenssl==19.1.0         # via urllib3
 pytz==2019.3              # via celery
 redis==3.4.1              # via celery
-scout-apm==2.11.0
+scout-apm==2.11.0         # via -r requirements.in
 six==1.14.0               # via cryptography, pyopenssl, traitlets
 traitlets==4.3.3          # via ipython
 urllib3[secure]==1.25.8   # via scout-apm
 vine==1.3.0               # via amqp, celery
 wcwidth==0.1.8            # via prompt-toolkit
-wrapt==1.11.2             # via scout-apm
+wrapt==1.12.0             # via scout-apm
 
 # The following packages are considered to be unsafe in a requirements file:
 # setuptools
