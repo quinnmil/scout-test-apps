@@ -10,11 +10,11 @@ autobahn==20.1.2          # via daphne
 automat==0.8.0            # via twisted
 certifi==2019.11.28       # via urllib3
 cffi==1.13.2              # via cryptography
-channels==2.4.0
+channels==2.4.0           # via -r requirements.in
 constantly==15.1.0        # via twisted
 cryptography==2.8         # via autobahn, pyopenssl, service-identity, urllib3
 daphne==2.4.1             # via channels
-django==3.0.3
+django==3.0.3             # via -r requirements.in, channels
 hyperlink==19.0.0         # via twisted
 idna==2.8                 # via hyperlink, twisted, urllib3
 incremental==17.5.0       # via twisted
@@ -25,7 +25,7 @@ pycparser==2.19           # via cffi
 pyhamcrest==2.0.0         # via twisted
 pyopenssl==19.1.0         # via twisted, urllib3
 pytz==2019.3              # via django
-scout-apm==2.11.0
+scout-apm==2.13.0         # via -r requirements.in
 service-identity==18.1.0  # via twisted
 six==1.14.0               # via autobahn, automat, cryptography, pyopenssl, txaio
 sqlparse==0.3.0           # via django

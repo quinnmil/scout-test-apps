@@ -12,11 +12,11 @@ cffi==1.14.0              # via cryptography
 click==7.0                # via rq
 cryptography==2.8         # via pyopenssl, urllib3
 decorator==4.4.1          # via ipython, traitlets
-django-rq==2.2.0
-django==2.2.10
+django-rq==2.2.0          # via -r requirements.in
+django==2.2.10            # via -r requirements.in, django-rq
 idna==2.8                 # via urllib3
 ipython-genutils==0.2.0   # via traitlets
-ipython==7.11.1
+ipython==7.11.1           # via -r requirements.in
 jedi==0.15.2              # via ipython
 parso==0.5.2              # via jedi
 pexpect==4.7.0            # via ipython
@@ -29,8 +29,8 @@ pygments==2.5.2           # via ipython
 pyopenssl==19.1.0         # via urllib3
 pytz==2019.3              # via django
 redis==3.3.11             # via django-rq, rq
-rq==1.2.0
-scout-apm==2.11.0
+rq==1.2.0                 # via -r requirements.in, django-rq
+scout-apm==2.13.0         # via -r requirements.in
 six==1.14.0               # via cryptography, pyopenssl, traitlets
 sqlparse==0.3.0           # via django
 traitlets==4.3.3          # via ipython

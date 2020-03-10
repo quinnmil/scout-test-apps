@@ -30,7 +30,7 @@ pygments==2.5.2           # via ipython
 pyopenssl==19.1.0         # via urllib3
 pytz==2019.3              # via celery
 redis==3.4.1              # via celery
-scout-apm==2.11.0         # via -r requirements.in
+scout-apm==2.13.0         # via -r requirements.in
 six==1.14.0               # via cryptography, pyopenssl, traitlets
 traitlets==4.3.3          # via ipython
 urllib3[secure]==1.25.8   # via scout-apm
