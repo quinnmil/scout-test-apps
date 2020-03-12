@@ -4,18 +4,18 @@
 #
 #    pip-compile
 #
-asgiref==3.2.3            # via django, scout-apm
+asgiref==3.2.5            # via django, scout-apm
 certifi==2019.11.28       # via urllib3
 cffi==1.14.0              # via cryptography
 cryptography==2.8         # via pyopenssl, urllib3
-django==3.0.3             # via -r requirements.in
-idna==2.8                 # via urllib3
-psutil==5.6.7             # via scout-apm
-pycparser==2.19           # via cffi
+django==3.0.4             # via -r requirements.in
+idna==2.9                 # via urllib3
+psutil==5.7.0             # via scout-apm
+pycparser==2.20           # via cffi
 pyopenssl==19.1.0         # via urllib3
 pytz==2019.3              # via django
 scout-apm==2.13.0         # via -r requirements.in
 six==1.14.0               # via cryptography, pyopenssl
-sqlparse==0.3.0           # via django
-urllib3[secure]==1.25.7   # via scout-apm
-wrapt==1.11.2             # via scout-apm
+sqlparse==0.3.1           # via django
+urllib3[secure]==1.25.8   # via scout-apm
+wrapt==1.12.1             # via scout-apm

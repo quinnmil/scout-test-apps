@@ -4,28 +4,28 @@
 #
 #    pip-compile
 #
-asgiref==3.2.3            # via scout-apm
+asgiref==3.2.5            # via scout-apm
 certifi==2019.11.28       # via urllib3
 cffi==1.14.0              # via cryptography
-cheroot==8.2.1            # via cherrypy
+cheroot==8.3.0            # via cherrypy
 cherrypy==18.5.0          # via -r requirements.in
 cryptography==2.8         # via pyopenssl, urllib3
-idna==2.8                 # via urllib3
+idna==2.9                 # via urllib3
 jaraco.classes==3.1.0     # via jaraco.collections
 jaraco.collections==3.0.0  # via cherrypy
 jaraco.functools==3.0.0   # via cheroot, jaraco.text, tempora
 jaraco.text==3.2.0        # via jaraco.collections
-more-itertools==8.1.0     # via cheroot, cherrypy, jaraco.classes, jaraco.functools
+more-itertools==8.2.0     # via cheroot, cherrypy, jaraco.classes, jaraco.functools
 portend==2.6              # via cherrypy
-psutil==5.6.7             # via scout-apm
-pycparser==2.19           # via cffi
+psutil==5.7.0             # via scout-apm
+pycparser==2.20           # via cffi
 pyopenssl==19.1.0         # via urllib3
 pytz==2019.3              # via tempora
 scout-apm==2.13.0         # via -r requirements.in
 six==1.14.0               # via cheroot, cryptography, jaraco.collections, jaraco.text, pyopenssl
 tempora==2.1.0            # via portend
-urllib3[secure]==1.25.7   # via scout-apm
-wrapt==1.11.2             # via scout-apm
+urllib3[secure]==1.25.8   # via scout-apm
+wrapt==1.12.1             # via scout-apm
 zc.lockfile==2.0          # via cherrypy
 
 # The following packages are considered to be unsafe in a requirements file:

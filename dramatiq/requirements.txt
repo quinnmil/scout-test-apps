@@ -5,34 +5,34 @@
 #    pip-compile
 #
 appnope==0.1.0            # via ipython
-asgiref==3.2.3            # via scout-apm
+asgiref==3.2.5            # via scout-apm
 backcall==0.1.0           # via ipython
 certifi==2019.11.28       # via urllib3
 cffi==1.14.0              # via cryptography
 cryptography==2.8         # via pyopenssl, urllib3
-decorator==4.4.1          # via ipython, traitlets
-dramatiq[redis]==1.7.0    # via -r requirements.in
-idna==2.8                 # via urllib3
+decorator==4.4.2          # via ipython, traitlets
+dramatiq[redis]==1.8.1    # via -r requirements.in
+idna==2.9                 # via urllib3
 ipython-genutils==0.2.0   # via traitlets
-ipython==7.11.1           # via -r requirements.in
-jedi==0.15.2              # via ipython
-parso==0.5.2              # via jedi
-pexpect==4.7.0            # via ipython
+ipython==7.13.0           # via -r requirements.in
+jedi==0.16.0              # via ipython
+parso==0.6.2              # via jedi
+pexpect==4.8.0            # via ipython
 pickleshare==0.7.5        # via ipython
 prometheus-client==0.7.1  # via dramatiq
-prompt-toolkit==3.0.2     # via ipython
-psutil==5.6.7             # via scout-apm
+prompt-toolkit==3.0.4     # via ipython
+psutil==5.7.0             # via scout-apm
 ptyprocess==0.6.0         # via pexpect
-pycparser==2.19           # via cffi
-pygments==2.5.2           # via ipython
+pycparser==2.20           # via cffi
+pygments==2.6.1           # via ipython
 pyopenssl==19.1.0         # via urllib3
-redis==3.3.11             # via dramatiq
+redis==3.4.1              # via dramatiq
 scout-apm==2.13.0         # via -r requirements.in
 six==1.14.0               # via cryptography, pyopenssl, traitlets
 traitlets==4.3.3          # via ipython
-urllib3[secure]==1.25.7   # via scout-apm
+urllib3[secure]==1.25.8   # via scout-apm
 wcwidth==0.1.8            # via prompt-toolkit
-wrapt==1.11.2             # via scout-apm
+wrapt==1.12.1             # via scout-apm
 
 # The following packages are considered to be unsafe in a requirements file:
 # setuptools
