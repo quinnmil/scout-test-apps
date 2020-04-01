@@ -4,7 +4,7 @@
 #
 #    pip-compile
 #
-asgiref==3.2.5            # via scout-apm
+asgiref==3.2.7            # via scout-apm
 certifi==2019.11.28       # via urllib3
 cffi==1.14.0              # via cryptography
 cryptography==2.8         # via pyopenssl, urllib3

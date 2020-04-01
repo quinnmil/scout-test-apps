@@ -5,7 +5,7 @@
 #    pip-compile
 #
 appnope==0.1.0            # via ipython
-asgiref==3.2.5            # via scout-apm
+asgiref==3.2.7            # via scout-apm
 backcall==0.1.0           # via ipython
 certifi==2019.11.28       # via urllib3
 cffi==1.14.0              # via cryptography
@@ -20,7 +20,7 @@ parso==0.6.2              # via jedi
 pexpect==4.8.0            # via ipython
 pickleshare==0.7.5        # via ipython
 prometheus-client==0.7.1  # via dramatiq
-prompt-toolkit==3.0.4     # via ipython
+prompt-toolkit==3.0.5     # via ipython
 psutil==5.7.0             # via scout-apm
 ptyprocess==0.6.0         # via pexpect
 pycparser==2.20           # via cffi
@@ -31,7 +31,7 @@ scout-apm==2.13.0         # via -r requirements.in
 six==1.14.0               # via cryptography, pyopenssl, traitlets
 traitlets==4.3.3          # via ipython
 urllib3[secure]==1.25.8   # via scout-apm
-wcwidth==0.1.8            # via prompt-toolkit
+wcwidth==0.1.9            # via prompt-toolkit
 wrapt==1.12.1             # via scout-apm
 
 # The following packages are considered to be unsafe in a requirements file:

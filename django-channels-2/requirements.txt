@@ -4,9 +4,9 @@
 #
 #    pip-compile
 #
-asgiref==3.2.5            # via channels, daphne, django, scout-apm
+asgiref==3.2.7            # via channels, daphne, django, scout-apm
 attrs==19.3.0             # via automat, service-identity, twisted
-autobahn==20.3.1          # via daphne
+autobahn==20.4.1          # via daphne
 automat==20.2.0           # via twisted
 certifi==2019.11.28       # via urllib3
 cffi==1.14.0              # via cryptography
@@ -14,7 +14,7 @@ channels==2.4.0           # via -r requirements.in
 constantly==15.1.0        # via twisted
 cryptography==2.8         # via autobahn, pyopenssl, service-identity, urllib3
 daphne==2.4.1             # via channels
-django==3.0.4             # via -r requirements.in, channels
+django==3.0.5             # via -r requirements.in, channels
 hyperlink==19.0.0         # via twisted
 idna==2.9                 # via hyperlink, twisted, urllib3
 incremental==17.5.0       # via twisted
@@ -27,13 +27,13 @@ pyopenssl==19.1.0         # via twisted, urllib3
 pytz==2019.3              # via django
 scout-apm==2.13.0         # via -r requirements.in
 service-identity==18.1.0  # via twisted
-six==1.14.0               # via automat, cryptography, pyopenssl, txaio
+six==1.14.0               # via automat, cryptography, pyopenssl
 sqlparse==0.3.1           # via django
-twisted[tls]==19.10.0     # via daphne
-txaio==20.1.1             # via autobahn
+twisted[tls]==20.3.0      # via daphne
+txaio==20.4.1             # via autobahn
 urllib3[secure]==1.25.8   # via scout-apm
 wrapt==1.12.1             # via scout-apm
-zope.interface==4.7.2     # via twisted
+zope.interface==5.0.2     # via twisted
 
 # The following packages are considered to be unsafe in a requirements file:
 # setuptools

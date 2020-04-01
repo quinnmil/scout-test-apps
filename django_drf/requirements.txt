@@ -4,11 +4,11 @@
 #
 #    pip-compile
 #
-asgiref==3.2.5            # via django, scout-apm
+asgiref==3.2.7            # via django, scout-apm
 certifi==2019.11.28       # via urllib3
 cffi==1.14.0              # via cryptography
 cryptography==2.8         # via pyopenssl, urllib3
-django==3.0.4             # via -r requirements.in, djangorestframework
+django==3.0.5             # via -r requirements.in, djangorestframework
 djangorestframework==3.11.0  # via -r requirements.in
 idna==2.9                 # via urllib3
 psutil==5.7.0             # via scout-apm

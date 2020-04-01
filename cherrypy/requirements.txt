@@ -4,7 +4,7 @@
 #
 #    pip-compile
 #
-asgiref==3.2.5            # via scout-apm
+asgiref==3.2.7            # via scout-apm
 certifi==2019.11.28       # via urllib3
 cffi==1.14.0              # via cryptography
 cheroot==8.3.0            # via cherrypy
@@ -23,7 +23,7 @@ pyopenssl==19.1.0         # via urllib3
 pytz==2019.3              # via tempora
 scout-apm==2.13.0         # via -r requirements.in
 six==1.14.0               # via cheroot, cryptography, jaraco.collections, jaraco.text, pyopenssl
-tempora==2.1.0            # via portend
+tempora==3.0.0            # via portend
 urllib3[secure]==1.25.8   # via scout-apm
 wrapt==1.12.1             # via scout-apm
 zc.lockfile==2.0          # via cherrypy
