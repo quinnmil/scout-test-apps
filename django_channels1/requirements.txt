@@ -8,11 +8,11 @@ asgiref==1.1.2            # via channels, daphne, scout-apm
 attrs==19.3.0             # via automat, twisted
 autobahn==20.4.1          # via daphne
 automat==20.2.0           # via twisted
-certifi==2019.11.28       # via urllib3
+certifi==2020.4.5.1       # via urllib3
 cffi==1.14.0              # via cryptography
 channels==1.1.8           # via -r requirements.in
 constantly==15.1.0        # via twisted
-cryptography==2.8         # via autobahn, pyopenssl, urllib3
+cryptography==2.9         # via autobahn, pyopenssl, urllib3
 daphne==1.4.2             # via channels
 django==1.11.29           # via -r requirements.in, channels
 hyperlink==19.0.0         # via twisted
@@ -23,7 +23,7 @@ pycparser==2.20           # via cffi
 pyhamcrest==2.0.2         # via twisted
 pyopenssl==19.1.0         # via urllib3
 pytz==2019.3              # via django
-scout-apm==2.13.0         # via -r requirements.in
+scout-apm==2.14.0         # via -r requirements.in
 six==1.14.0               # via asgiref, automat, cryptography, pyopenssl
 twisted==20.3.0           # via daphne
 txaio==20.4.1             # via autobahn

@@ -5,11 +5,11 @@
 #    pip-compile
 #
 asgiref==3.2.7            # via scout-apm
-certifi==2019.11.28       # via urllib3
+certifi==2020.4.5.1       # via urllib3
 cffi==1.14.0              # via cryptography
 cheroot==8.3.0            # via cherrypy
 cherrypy==18.5.0          # via -r requirements.in
-cryptography==2.8         # via pyopenssl, urllib3
+cryptography==2.9         # via pyopenssl, urllib3
 idna==2.9                 # via urllib3
 jaraco.classes==3.1.0     # via jaraco.collections
 jaraco.collections==3.0.0  # via cherrypy
@@ -21,7 +21,7 @@ psutil==5.7.0             # via scout-apm
 pycparser==2.20           # via cffi
 pyopenssl==19.1.0         # via urllib3
 pytz==2019.3              # via tempora
-scout-apm==2.13.0         # via -r requirements.in
+scout-apm==2.14.0         # via -r requirements.in
 six==1.14.0               # via cheroot, cryptography, jaraco.collections, jaraco.text, pyopenssl
 tempora==3.0.0            # via portend
 urllib3[secure]==1.25.8   # via scout-apm

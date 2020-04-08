@@ -7,9 +7,9 @@
 appnope==0.1.0            # via ipython
 asgiref==3.2.7            # via scout-apm
 backcall==0.1.0           # via ipython
-certifi==2019.11.28       # via urllib3
+certifi==2020.4.5.1       # via urllib3
 cffi==1.14.0              # via cryptography
-cryptography==2.8         # via pyopenssl, urllib3
+cryptography==2.9         # via pyopenssl, urllib3
 decorator==4.4.2          # via ipython, traitlets
 dramatiq[redis]==1.8.1    # via -r requirements.in
 idna==2.9                 # via urllib3
@@ -27,7 +27,7 @@ pycparser==2.20           # via cffi
 pygments==2.6.1           # via ipython
 pyopenssl==19.1.0         # via urllib3
 redis==3.4.1              # via dramatiq
-scout-apm==2.13.0         # via -r requirements.in
+scout-apm==2.14.0         # via -r requirements.in
 six==1.14.0               # via cryptography, pyopenssl, traitlets
 traitlets==4.3.3          # via ipython
 urllib3[secure]==1.25.8   # via scout-apm
