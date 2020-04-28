@@ -9,7 +9,6 @@ from channels.routing import URLRouter
 from django.conf import settings
 from django.http import HttpResponse
 from django.utils.crypto import get_random_string
-from scout_apm.async_.channels import ScoutMiddleware
 
 settings.configure(
     ASGI_APPLICATION="__main__.application",
@@ -110,7 +109,10 @@ class ServerSentEventsSource(AsyncHttpConsumer):
         ]
         for message in messages:
             await asyncio.sleep(1.0)
-            await self.send_body(f"data: {message}\n\n".encode("utf-8"), more_body=True)
+            await self.send_body(
+                f"data: {message}\n\n".encode("utf-8"),
+                more_body=True,
+            )
         await self.send_body(b"")
 
 
@@ -129,7 +131,11 @@ class WebsocketsPage(AsyncHttpConsumer):
             </head>
             <body>
                 <script>
-                    const chatSocket = new WebSocket('ws://' + window.location.host + '/ws-source/');
+                    const chatSocket = new WebSocket(
+                        'ws://'
+                        + window.location.host
+                        + '/ws-source/'
+                    );
 
                     chatSocket.onmessage = function(event) {
                         const newElement = document.createElement("p");
@@ -175,7 +181,7 @@ try:
     from django.urls import path
 
     urlpatterns = [path("", index)]
-    application = ScoutMiddleware(URLRouter(
+    application = URLRouter(
         [
             path("sse/", ServerSentEventsPage),
             path("sse-source/", ServerSentEventsSource),
@@ -183,15 +189,15 @@ try:
             path("ws-source/", WebsocketsSource),
             path("", AsgiHandler),
         ]
-    ))
+    )
 except ImportError:
     # Django < 2.0
     from django.conf.urls import url
 
     urlpatterns = [url(r"^$", index)]
-    application = ScoutMiddleware(URLRouter(
+    application = URLRouter(
         [url(r"^async/$", AsyncHttpConsumer), url(r"", AsgiHandler)]
-    ))
+    )
 
 
 if __name__ == "__main__":
