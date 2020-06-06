@@ -14,24 +14,24 @@ decorator==4.4.2          # via ipython, traitlets
 dramatiq[redis]==1.8.1    # via -r requirements.in
 idna==2.9                 # via urllib3
 ipython-genutils==0.2.0   # via traitlets
-ipython==7.14.0           # via -r requirements.in
+ipython==7.15.0           # via -r requirements.in
 jedi==0.17.0              # via ipython
 parso==0.7.0              # via jedi
 pexpect==4.8.0            # via ipython
 pickleshare==0.7.5        # via ipython
-prometheus-client==0.7.1  # via dramatiq
+prometheus-client==0.8.0  # via dramatiq
 prompt-toolkit==3.0.5     # via ipython
 psutil==5.7.0             # via scout-apm
 ptyprocess==0.6.0         # via pexpect
 pycparser==2.20           # via cffi
 pygments==2.6.1           # via ipython
 pyopenssl==19.1.0         # via urllib3
-redis==3.5.2              # via dramatiq
-scout-apm==2.14.2         # via -r requirements.in
+redis==3.5.3              # via dramatiq
+scout-apm==2.14.3         # via -r requirements.in
 six==1.15.0               # via cryptography, pyopenssl, traitlets
 traitlets==4.3.3          # via ipython
 urllib3[secure]==1.25.9   # via scout-apm
-wcwidth==0.1.9            # via prompt-toolkit
+wcwidth==0.2.3            # via prompt-toolkit
 wrapt==1.12.1             # via scout-apm
 
 # The following packages are considered to be unsafe in a requirements file:

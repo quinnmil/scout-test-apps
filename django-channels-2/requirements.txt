@@ -14,7 +14,7 @@ channels==2.4.0           # via -r requirements.in
 constantly==15.1.0        # via twisted
 cryptography==2.9.2       # via autobahn, pyopenssl, service-identity, urllib3
 daphne==2.5.0             # via channels
-django==3.0.6             # via -r requirements.in, channels
+django==3.0.7             # via -r requirements.in, channels
 hyperlink==19.0.0         # via twisted
 idna==2.9                 # via hyperlink, twisted, urllib3
 incremental==17.5.0       # via twisted
@@ -25,7 +25,7 @@ pycparser==2.20           # via cffi
 pyhamcrest==2.0.2         # via twisted
 pyopenssl==19.1.0         # via twisted, urllib3
 pytz==2020.1              # via django
-scout-apm==2.14.2         # via -r requirements.in
+scout-apm==2.14.3         # via -r requirements.in
 service-identity==18.1.0  # via twisted
 six==1.15.0               # via automat, cryptography, pyopenssl
 sqlparse==0.3.1           # via django

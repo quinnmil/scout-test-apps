@@ -21,7 +21,7 @@ psutil==5.7.0             # via scout-apm
 pycparser==2.20           # via cffi
 pyopenssl==19.1.0         # via urllib3
 pytz==2020.1              # via tempora
-scout-apm==2.14.2         # via -r requirements.in
+scout-apm==2.14.3         # via -r requirements.in
 six==1.15.0               # via cheroot, cryptography, jaraco.collections, jaraco.text, pyopenssl
 tempora==3.0.0            # via portend
 urllib3[secure]==1.25.9   # via scout-apm

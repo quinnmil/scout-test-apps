@@ -23,7 +23,7 @@ pycparser==2.20           # via cffi
 pyhamcrest==2.0.2         # via twisted
 pyopenssl==19.1.0         # via urllib3
 pytz==2020.1              # via django
-scout-apm==2.14.2         # via -r requirements.in
+scout-apm==2.14.3         # via -r requirements.in
 six==1.15.0               # via asgiref, automat, cryptography, pyopenssl
 twisted==20.3.0           # via daphne
 txaio==20.4.1             # via autobahn

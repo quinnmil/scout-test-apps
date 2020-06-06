@@ -11,11 +11,11 @@ certifi==2020.4.5.1       # via urllib3
 cffi==1.14.0              # via cryptography
 cryptography==2.9.2       # via pyopenssl, urllib3
 decorator==4.4.2          # via ipython, traitlets
-django==2.2.12            # via -r requirements.in
+django==2.2.13            # via -r requirements.in
 huey==2.2.0               # via -r requirements.in
 idna==2.9                 # via urllib3
 ipython-genutils==0.2.0   # via traitlets
-ipython==7.14.0           # via -r requirements.in
+ipython==7.15.0           # via -r requirements.in
 jedi==0.17.0              # via ipython
 parso==0.7.0              # via jedi
 pexpect==4.8.0            # via ipython
@@ -27,12 +27,12 @@ pycparser==2.20           # via cffi
 pygments==2.6.1           # via ipython
 pyopenssl==19.1.0         # via urllib3
 pytz==2020.1              # via django
-scout-apm==2.14.2         # via -r requirements.in
+scout-apm==2.14.3         # via -r requirements.in
 six==1.15.0               # via cryptography, pyopenssl, traitlets
 sqlparse==0.3.1           # via django
 traitlets==4.3.3          # via ipython
 urllib3[secure]==1.25.9   # via scout-apm
-wcwidth==0.1.9            # via prompt-toolkit
+wcwidth==0.2.3            # via prompt-toolkit
 wrapt==1.12.1             # via scout-apm
 
 # The following packages are considered to be unsafe in a requirements file:
