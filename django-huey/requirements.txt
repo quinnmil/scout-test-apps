@@ -5,34 +5,34 @@
 #    pip-compile
 #
 appnope==0.1.0            # via ipython
-asgiref==3.2.7            # via scout-apm
-backcall==0.1.0           # via ipython
-certifi==2020.4.5.1       # via urllib3
+asgiref==3.2.10           # via scout-apm
+backcall==0.2.0           # via ipython
+certifi==2020.6.20        # via urllib3
 cffi==1.14.0              # via cryptography
-cryptography==2.9.2       # via pyopenssl, urllib3
+cryptography==3.0         # via pyopenssl, urllib3
 decorator==4.4.2          # via ipython, traitlets
-django==2.2.13            # via -r requirements.in
+django==2.2.14            # via -r requirements.in
 huey==2.2.0               # via -r requirements.in
-idna==2.9                 # via urllib3
+idna==2.10                # via urllib3
 ipython-genutils==0.2.0   # via traitlets
-ipython==7.15.0           # via -r requirements.in
-jedi==0.17.0              # via ipython
+ipython==7.16.1           # via -r requirements.in
+jedi==0.17.2              # via ipython
 parso==0.7.0              # via jedi
 pexpect==4.8.0            # via ipython
 pickleshare==0.7.5        # via ipython
 prompt-toolkit==3.0.5     # via ipython
-psutil==5.7.0             # via scout-apm
+psutil==5.7.2             # via scout-apm
 ptyprocess==0.6.0         # via pexpect
 pycparser==2.20           # via cffi
 pygments==2.6.1           # via ipython
 pyopenssl==19.1.0         # via urllib3
 pytz==2020.1              # via django
-scout-apm==2.14.3         # via -r requirements.in
+scout-apm==2.15.0         # via -r requirements.in
 six==1.15.0               # via cryptography, pyopenssl, traitlets
 sqlparse==0.3.1           # via django
 traitlets==4.3.3          # via ipython
 urllib3[secure]==1.25.9   # via scout-apm
-wcwidth==0.2.3            # via prompt-toolkit
+wcwidth==0.2.5            # via prompt-toolkit
 wrapt==1.12.1             # via scout-apm
 
 # The following packages are considered to be unsafe in a requirements file:
