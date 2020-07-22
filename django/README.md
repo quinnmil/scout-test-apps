@@ -28,6 +28,6 @@ $ export SCOUT_KEY=your-key-here
 $ python -X dev app.py runserver  # -X dev only supported on Python 3.7+
 ```
 
-You should see startup logging from Django and Starlette.
+You should see startup logging from Django and Scout.
 
 **Third,** visit pages in your browser, such as http://localhost:8080/ .
