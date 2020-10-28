@@ -6,17 +6,17 @@
 #
 asgiref==3.2.10           # via django, scout-apm
 certifi==2020.6.20        # via urllib3
-cffi==1.14.0              # via cryptography
-cryptography==3.0         # via pyopenssl, urllib3
-django==3.0.8             # via -r requirements.in, djangorestframework
-djangorestframework==3.11.0  # via -r requirements.in
+cffi==1.14.3              # via cryptography
+cryptography==3.2.1       # via pyopenssl, urllib3
+django==3.1.2             # via -r requirements.in, djangorestframework
+djangorestframework==3.12.1  # via -r requirements.in
 idna==2.10                # via urllib3
-psutil==5.7.2             # via scout-apm
+psutil==5.7.3             # via scout-apm
 pycparser==2.20           # via cffi
 pyopenssl==19.1.0         # via urllib3
 pytz==2020.1              # via django
-scout-apm==2.15.0         # via -r requirements.in
+scout-apm==2.17.0         # via -r requirements.in
 six==1.15.0               # via cryptography, pyopenssl
-sqlparse==0.3.1           # via django
-urllib3[secure]==1.25.9   # via scout-apm
+sqlparse==0.4.1           # via django
+urllib3[secure]==1.25.11  # via scout-apm
 wrapt==1.12.1             # via scout-apm
