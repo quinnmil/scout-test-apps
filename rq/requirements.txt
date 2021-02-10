@@ -4,35 +4,66 @@
 #
 #    pip-compile
 #
-appnope==0.1.0            # via ipython
-asgiref==3.3.0            # via scout-apm
-backcall==0.2.0           # via ipython
-certifi==2020.6.20        # via urllib3
-cffi==1.14.3              # via cryptography
-click==7.1.2              # via rq
-cryptography==3.2.1       # via pyopenssl, urllib3
-decorator==4.4.2          # via ipython
-idna==2.10                # via urllib3
-ipython-genutils==0.2.0   # via traitlets
-ipython==7.18.1           # via -r requirements.in
-jedi==0.17.2              # via ipython
-parso==0.7.1              # via jedi
-pexpect==4.8.0            # via ipython
-pickleshare==0.7.5        # via ipython
-prompt-toolkit==3.0.8     # via ipython
-psutil==5.7.3             # via scout-apm
-ptyprocess==0.6.0         # via pexpect
-pycparser==2.20           # via cffi
-pygments==2.7.2           # via ipython
-pyopenssl==19.1.0         # via urllib3
-redis==3.5.3              # via rq
-rq==1.5.2                 # via -r requirements.in
-scout-apm==2.17.0         # via -r requirements.in
-six==1.15.0               # via cryptography, pyopenssl
-traitlets==5.0.5          # via ipython
-urllib3[secure]==1.25.11  # via scout-apm
-wcwidth==0.2.5            # via prompt-toolkit
-wrapt==1.12.1             # via scout-apm
+appnope==0.1.2
+    # via ipython
+asgiref==3.3.1
+    # via scout-apm
+backcall==0.2.0
+    # via ipython
+certifi==2020.12.5
+    # via urllib3
+cffi==1.14.4
+    # via cryptography
+click==7.1.2
+    # via rq
+cryptography==3.4.4
+    # via
+    #   pyopenssl
+    #   urllib3
+decorator==4.4.2
+    # via ipython
+idna==3.1
+    # via urllib3
+ipython-genutils==0.2.0
+    # via traitlets
+ipython==7.20.0
+    # via -r requirements.in
+jedi==0.18.0
+    # via ipython
+parso==0.8.1
+    # via jedi
+pexpect==4.8.0
+    # via ipython
+pickleshare==0.7.5
+    # via ipython
+prompt-toolkit==3.0.14
+    # via ipython
+psutil==5.8.0
+    # via scout-apm
+ptyprocess==0.7.0
+    # via pexpect
+pycparser==2.20
+    # via cffi
+pygments==2.7.4
+    # via ipython
+pyopenssl==20.0.1
+    # via urllib3
+redis==3.5.3
+    # via rq
+rq==1.7.0
+    # via -r requirements.in
+scout-apm==2.18.0
+    # via -r requirements.in
+six==1.15.0
+    # via pyopenssl
+traitlets==5.0.5
+    # via ipython
+urllib3[secure]==1.26.3
+    # via scout-apm
+wcwidth==0.2.5
+    # via prompt-toolkit
+wrapt==1.12.1
+    # via scout-apm
 
 # The following packages are considered to be unsafe in a requirements file:
 # setuptools
