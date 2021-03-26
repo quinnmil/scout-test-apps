@@ -66,6 +66,18 @@ async def background_jobs(request):
     return PlainTextResponse("Triggering background jobs", background=tasks)
 
 
+async def await_task(request):
+
+    async def awaiting_task():
+        with instrument('awaiting_task'):
+            await asyncio.sleep(0.1)
+            return "done"
+
+    task = asyncio.create_task(awaiting_task())
+    await task
+    return PlainTextResponse("Awaited task.")
+
+
 async def error(request, exc):
     # Always raise exceptions, rather than convert them into pages
     raise exc
@@ -77,6 +89,7 @@ app = Starlette(
         Route("/hello/", HelloEndpoint),
         Route("/crash/", crash),
         Route("/background-jobs/", background_jobs),
+        Route("/await-task/", await_task),
     ],
     exception_handlers={
         500: error,
