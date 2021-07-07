@@ -36,6 +36,7 @@ settings.configure(
     SCOUT_KEY=os.environ["SCOUT_KEY"],
     SCOUT_NAME="Test Django App",
     SCOUT_IGNORE=["/ignore"],
+    SCOUT_ERRORS_ENABLED=True
 )
 
 
@@ -46,6 +47,11 @@ def index(request):
     return HttpResponse("Hello, " + escape(name) + "!")
 
 
+def crash(request, foo):
+    1 / 0
+    return HttpResponse("Broken.")
+
+
 def ignore(request):
     return HttpResponse("Ignore me!")
 
@@ -53,12 +59,16 @@ def ignore(request):
 try:
     from django.urls import path
 
-    urlpatterns = [path("", index), path("ignore/", ignore)]
+    urlpatterns = [path("", index), path("ignore/", ignore), path("crash/<foo>", crash)]
 except ImportError:
     # Django < 2.0
     from django.conf.urls import url
 
-    urlpatterns = [url(r"^$", index), url(r"^ignore/$", ignore)]
+    urlpatterns = [
+        url(r"^$", index),
+        url(r"^ignore/$", ignore),
+        url(r"^crash/(?P<foo>\w+)/$", crash),
+    ]
 
 application = get_wsgi_application()
 
