@@ -17,6 +17,7 @@ settings.configure(
     ALLOWED_HOSTS=["*"],  # Disable allowed host checking
     ROOT_URLCONF=__name__,  # Make this module the urlconf
     SECRET_KEY=get_random_string(50),
+    BASE_DIR=os.path.dirname(os.path.abspath(__file__)),
     LOGGING={
         "version": 1,
         "disable_existing_loggers": False,
@@ -31,7 +32,9 @@ settings.configure(
         },
         "root": {"handlers": ["stdout"], "level": "DEBUG"},
     },
-    INSTALLED_APPS=["scout_apm.django"],
+    INSTALLED_APPS=["scout_apm.django", "django.contrib.sessions"],
+    MIDDLEWARE=["django.contrib.sessions.middleware.SessionMiddleware"],
+    SESSION_ENGINE="django.contrib.sessions.backends.file",
     SCOUT_MONITOR=True,
     SCOUT_KEY=os.environ["SCOUT_KEY"],
     SCOUT_NAME="Test Django App",
@@ -47,6 +50,13 @@ def index(request):
     return HttpResponse("Hello, " + escape(name) + "!")
 
 
+def session(request):
+    session_key = 'session_value'
+    value = int(request.session.get(session_key) or 0)
+    request.session[session_key] = value + 1
+    return HttpResponse("Updated session value to {}".format(request.session[session_key]))
+
+
 def crash(request, foo):
     1 / 0
     return HttpResponse("Broken.")
@@ -59,7 +69,12 @@ def ignore(request):
 try:
     from django.urls import path
 
-    urlpatterns = [path("", index), path("ignore/", ignore), path("crash/<foo>", crash)]
+    urlpatterns = [
+        path("", index),
+        path("ignore/", ignore),
+        path("session/", session),
+        path("crash/<foo>/", crash),
+    ]
 except ImportError:
     # Django < 2.0
     from django.conf.urls import url
@@ -67,6 +82,7 @@ except ImportError:
     urlpatterns = [
         url(r"^$", index),
         url(r"^ignore/$", ignore),
+        url(r"^session/$", session),
         url(r"^crash/(?P<foo>\w+)/$", crash),
     ]
 
