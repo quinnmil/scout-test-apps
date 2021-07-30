@@ -36,6 +36,7 @@ app.config_from_object(
         SCOUT_MONITOR=True,
         SCOUT_KEY=os.environ["SCOUT_KEY"],
         SCOUT_NAME="Test Celery App",
+        SCOUT_ERRORS_ENABLED=True,
     ),
     namespace="CELERY_",
 )
@@ -44,6 +45,11 @@ app.config_from_object(
 @app.task
 def sleep(n):
     time.sleep(n)
+
+
+@app.task
+def crash(spam, foo=None):
+    raise ValueError("Boom!")
 
 
 scout_apm.celery.install(app)
