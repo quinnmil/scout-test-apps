@@ -4,41 +4,51 @@
 #
 #    pip-compile
 #
-asgiref==3.3.1
+asgiref==3.4.1
     # via scout-apm
-certifi==2020.12.5
-    # via urllib3
-cffi==1.14.4
+certifi==2021.10.8
+    # via
+    #   requests
+    #   urllib3
+cffi==1.15.0
     # via cryptography
-click==7.1.2
+charset-normalizer==2.0.7
+    # via requests
+click==8.0.3
     # via flask
-cryptography==3.4.4
+cryptography==35.0.0
     # via
     #   pyopenssl
     #   urllib3
-flask==1.1.2
+flask==2.0.2
     # via -r requirements.in
-idna==3.1
-    # via urllib3
-itsdangerous==1.1.0
+idna==3.3
+    # via
+    #   requests
+    #   urllib3
+itsdangerous==2.0.1
     # via flask
-jinja2==2.11.3
+jinja2==3.0.2
     # via flask
-markupsafe==1.1.1
+markupsafe==2.0.1
     # via jinja2
 psutil==5.8.0
     # via scout-apm
 pycparser==2.20
     # via cffi
-pyopenssl==20.0.1
+pyopenssl==21.0.0
     # via urllib3
-scout-apm==2.18.0
-    # via -r requirements.in
-six==1.15.0
-    # via pyopenssl
-urllib3[secure]==1.26.3
+requests==2.26.0
     # via scout-apm
-werkzeug==1.0.1
+scout-apm==2.23.3
+    # via -r requirements.in
+six==1.16.0
+    # via pyopenssl
+urllib3[secure]==1.26.7
+    # via
+    #   requests
+    #   scout-apm
+werkzeug==2.0.2
     # via flask
-wrapt==1.12.1
+wrapt==1.13.3
     # via scout-apm

@@ -4,17 +4,17 @@
 #
 #    pip-compile
 #
-asgiref==3.3.1
+asgiref==3.4.1
     # via scout-apm
-certifi==2020.12.5
+certifi==2021.10.8
     # via
     #   requests
     #   urllib3
-cffi==1.14.4
+cffi==1.15.0
     # via cryptography
-chardet==4.0.0
+charset-normalizer==2.0.7
     # via requests
-cryptography==3.4.4
+cryptography==35.0.0
     # via
     #   pyopenssl
     #   urllib3
@@ -22,7 +22,7 @@ falcon==2.0.0
     # via hug
 hug==2.6.1
     # via -r requirements.in
-idna==2.10
+idna==3.3
     # via
     #   requests
     #   urllib3
@@ -30,17 +30,19 @@ psutil==5.8.0
     # via scout-apm
 pycparser==2.20
     # via cffi
-pyopenssl==20.0.1
+pyopenssl==21.0.0
     # via urllib3
-requests==2.25.1
-    # via hug
-scout-apm==2.18.0
+requests==2.26.0
+    # via
+    #   hug
+    #   scout-apm
+scout-apm==2.23.3
     # via -r requirements.in
-six==1.15.0
+six==1.16.0
     # via pyopenssl
-urllib3[secure]==1.26.3
+urllib3[secure]==1.26.7
     # via
     #   requests
     #   scout-apm
-wrapt==1.12.1
+wrapt==1.13.3
     # via scout-apm

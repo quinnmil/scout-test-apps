@@ -4,38 +4,42 @@
 #
 #    pip-compile
 #
-asgiref==3.3.1
+asgiref==3.4.1
     # via
     #   channels
     #   daphne
     #   django
     #   scout-apm
-attrs==20.3.0
+attrs==21.2.0
     # via
     #   automat
     #   service-identity
     #   twisted
-autobahn==21.1.1
+autobahn==21.3.1
     # via daphne
 automat==20.2.0
     # via twisted
-certifi==2020.12.5
-    # via urllib3
-cffi==1.14.4
+certifi==2021.10.8
+    # via
+    #   requests
+    #   urllib3
+cffi==1.15.0
     # via cryptography
-channels==3.0.3
+channels==3.0.4
     # via -r requirements.in
+charset-normalizer==2.0.7
+    # via requests
 constantly==15.1.0
     # via twisted
-cryptography==3.4.4
+cryptography==35.0.0
     # via
     #   autobahn
     #   pyopenssl
     #   service-identity
     #   urllib3
-daphne==3.0.1
+daphne==3.0.2
     # via channels
-django==3.1.6
+django==3.2.9
     # via
     #   -r requirements.in
     #   channels
@@ -43,12 +47,13 @@ hyperlink==21.0.0
     # via
     #   autobahn
     #   twisted
-idna==3.1
+idna==3.3
     # via
     #   hyperlink
+    #   requests
     #   twisted
     #   urllib3
-incremental==17.5.0
+incremental==21.3.0
     # via twisted
 psutil==5.8.0
     # via scout-apm
@@ -60,33 +65,38 @@ pyasn1-modules==0.2.8
     # via service-identity
 pycparser==2.20
     # via cffi
-pyhamcrest==2.0.2
-    # via twisted
-pyopenssl==20.0.1
+pyopenssl==21.0.0
     # via
     #   twisted
     #   urllib3
-pytz==2021.1
+pytz==2021.3
     # via django
-scout-apm==2.18.0
+requests==2.26.0
+    # via scout-apm
+scout-apm==2.23.3
     # via -r requirements.in
-service-identity==18.1.0
+service-identity==21.1.0
     # via twisted
-six==1.15.0
+six==1.16.0
     # via
     #   automat
     #   pyopenssl
-sqlparse==0.4.1
+    #   service-identity
+sqlparse==0.4.2
     # via django
-twisted[tls]==20.3.0
+twisted[tls]==21.7.0
     # via daphne
-txaio==20.12.1
+txaio==21.2.1
     # via autobahn
-urllib3[secure]==1.26.3
+typing-extensions==3.10.0.2
+    # via twisted
+urllib3[secure]==1.26.7
+    # via
+    #   requests
+    #   scout-apm
+wrapt==1.13.3
     # via scout-apm
-wrapt==1.12.1
-    # via scout-apm
-zope.interface==5.2.0
+zope.interface==5.4.0
     # via twisted
 
 # The following packages are considered to be unsafe in a requirements file:

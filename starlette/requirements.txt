@@ -4,37 +4,54 @@
 #
 #    pip-compile
 #
-asgiref==3.3.1
-    # via scout-apm
-certifi==2020.12.5
-    # via urllib3
-cffi==1.14.4
+anyio==3.3.4
+    # via starlette
+asgiref==3.4.1
+    # via
+    #   scout-apm
+    #   uvicorn
+certifi==2021.10.8
+    # via
+    #   requests
+    #   urllib3
+cffi==1.15.0
     # via cryptography
-click==7.1.2
+charset-normalizer==2.0.7
+    # via requests
+click==8.0.3
     # via uvicorn
-cryptography==3.4.4
+cryptography==35.0.0
     # via
     #   pyopenssl
     #   urllib3
 h11==0.12.0
     # via uvicorn
-idna==3.1
-    # via urllib3
+idna==3.3
+    # via
+    #   anyio
+    #   requests
+    #   urllib3
 psutil==5.8.0
     # via scout-apm
 pycparser==2.20
     # via cffi
-pyopenssl==20.0.1
+pyopenssl==21.0.0
     # via urllib3
-scout-apm==2.18.0
-    # via -r requirements.in
-six==1.15.0
-    # via pyopenssl
-starlette==0.14.2
-    # via -r requirements.in
-urllib3[secure]==1.26.3
+requests==2.26.0
     # via scout-apm
-uvicorn==0.13.3
+scout-apm==2.23.3
     # via -r requirements.in
-wrapt==1.12.1
+six==1.16.0
+    # via pyopenssl
+sniffio==1.2.0
+    # via anyio
+starlette==0.17.0
+    # via -r requirements.in
+urllib3[secure]==1.26.7
+    # via
+    #   requests
+    #   scout-apm
+uvicorn==0.15.0
+    # via -r requirements.in
+wrapt==1.13.3
     # via scout-apm

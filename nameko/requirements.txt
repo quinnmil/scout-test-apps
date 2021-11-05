@@ -6,17 +6,17 @@
 #
 amqp==2.6.1
     # via kombu
-asgiref==3.3.1
+asgiref==3.4.1
     # via scout-apm
-certifi==2020.12.5
+certifi==2021.10.8
     # via
     #   requests
     #   urllib3
-cffi==1.14.4
+cffi==1.15.0
     # via cryptography
-chardet==4.0.0
+charset-normalizer==2.0.7
     # via requests
-cryptography==3.4.4
+cryptography==35.0.0
     # via
     #   pyopenssl
     #   urllib3
@@ -24,11 +24,11 @@ dnspython==1.16.0
     # via
     #   eventlet
     #   nameko
-eventlet==0.30.1
+eventlet==0.32.0
     # via nameko
-greenlet==1.0.0
+greenlet==1.1.2
     # via eventlet
-idna==2.10
+idna==3.3
     # via
     #   requests
     #   urllib3
@@ -36,9 +36,11 @@ kombu==4.6.11
     # via nameko
 mock==4.0.3
     # via nameko
-nameko==2.13.0
+nameko==2.14.0
     # via -r requirements.in
-path==15.1.0
+packaging==21.2
+    # via nameko
+path==16.2.0
     # via path.py
 path.py==12.5.0
     # via nameko
@@ -46,28 +48,32 @@ psutil==5.8.0
     # via scout-apm
 pycparser==2.20
     # via cffi
-pyopenssl==20.0.1
+pyopenssl==21.0.0
     # via urllib3
-pyyaml==5.4.1
+pyparsing==2.4.7
+    # via packaging
+pyyaml==6.0
     # via nameko
-requests==2.25.1
-    # via nameko
-scout-apm==2.18.0
+requests==2.26.0
+    # via
+    #   nameko
+    #   scout-apm
+scout-apm==2.23.3
     # via -r requirements.in
-six==1.15.0
+six==1.16.0
     # via
     #   eventlet
     #   nameko
     #   pyopenssl
-urllib3[secure]==1.26.3
+urllib3[secure]==1.26.7
     # via
     #   requests
     #   scout-apm
 vine==1.3.0
     # via amqp
-werkzeug==1.0.1
+werkzeug==2.0.2
     # via nameko
-wrapt==1.12.1
+wrapt==1.13.3
     # via
     #   nameko
     #   scout-apm
