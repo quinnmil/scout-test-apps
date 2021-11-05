@@ -1,3 +1,7 @@
 scout-apm
 fastapi
-uvicorn[standard]
+uvicorn
+SQLAlchemy
+psycopg2-binary
+databases[postgresql]
+asyncpg
