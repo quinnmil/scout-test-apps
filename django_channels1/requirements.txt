@@ -68,7 +68,7 @@ six==1.16.0
     #   asgiref
     #   automat
     #   pyopenssl
-twisted==21.7.0
+twisted==22.10.0
     # via daphne
 txaio==21.2.1
     # via autobahn
@@ -80,7 +80,7 @@ urllib3[secure]==1.26.7
     #   scout-apm
 wrapt==1.13.3
     # via scout-apm
-zope.interface==5.4.0
+zope-interface==5.4.0
     # via twisted
 
 # The following packages are considered to be unsafe in a requirements file:
