@@ -47,9 +47,12 @@ def sleep(n):
     time.sleep(n)
 
 
-@app.task
-def crash(spam, foo=None):
-    raise ValueError("Boom!")
+@app.task(bind=True, max_retries=1)
+def crash(self, spam, foo=None):
+    try:
+        raise ValueError("Boom!")
+    except ValueError:
+        raise self.retry(countdown=3)
 
 
 scout_apm.celery.install(app)

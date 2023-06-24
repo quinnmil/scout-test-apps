@@ -31,7 +31,7 @@ $ pip install -e /path/to/scout_apm_python  # optional!
 
 ```
 $ export SCOUT_KEY=your-key-here
-$ celery worker --app app
+$ celery --app app worker
 ```
 
 You should see startup logging from both Celery and Scout.
