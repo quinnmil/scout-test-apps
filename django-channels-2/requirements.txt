@@ -39,7 +39,7 @@ cryptography==35.0.0
     #   urllib3
 daphne==3.0.2
     # via channels
-django==3.2.9
+django==3.2.20
     # via
     #   -r requirements.in
     #   channels
