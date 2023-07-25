@@ -6,7 +6,7 @@
 #
 asgiref==3.4.1
     # via scout-apm
-certifi==2021.10.8
+certifi==2023.7.22
     # via
     #   requests
     #   urllib3
