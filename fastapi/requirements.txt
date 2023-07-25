@@ -14,7 +14,7 @@ asyncpg==0.24.0
     # via
     #   -r requirements.in
     #   databases
-certifi==2021.10.8
+certifi==2023.7.22
     # via
     #   requests
     #   urllib3
