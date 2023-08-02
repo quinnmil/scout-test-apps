@@ -31,7 +31,7 @@ charset-normalizer==2.0.7
     # via requests
 constantly==15.1.0
     # via twisted
-cryptography==35.0.0
+cryptography==41.0.3
     # via
     #   autobahn
     #   pyopenssl
