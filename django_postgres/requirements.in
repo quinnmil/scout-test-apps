@@ -1,0 +1,4 @@
+django
+scout-apm==3.0.0rc1
+certifi
+psycopg2-binary

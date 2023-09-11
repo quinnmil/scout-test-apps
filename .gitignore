@@ -9,4 +9,7 @@ __pycache__/
 .idea/
 .env
 venv
+.venv
+.DS_Store
+data
 scout_apm_debug.log
